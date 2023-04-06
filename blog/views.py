@@ -1,8 +1,5 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponseRedirect
-from django.urls import reverse
-from django.utils import timezone
 
 from .forms import CommentForm
 from .models import Post, Comment
@@ -27,3 +24,7 @@ def post_detail(request, pk):
     else:
         form = CommentForm()
     return render(request, 'post.html', {'post': post, 'form': form})
+
+
+def solo_page(request):
+    return render(request, 'solo-page.html')

@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <img style="width: 100%; height: 75%" src="{% static 'images/blog_photo/top_photo.png' %}" alt="">
+            <p class="text-muted" style="padding: 10px;">PHOTODIARY</p>
+            <h2>The perfect weekend getaway</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                <b>industry's standard</b> dummy text ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+                with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like <b>Aldus PageMaker including</b> versions of Lorem Ipsum.</p>
+
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center img_solopage">
+            <img class="img-fluid" src="{% static 'images/blog_photo/1.png' %}" alt="">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center img_solopage">
+            <img class="img-fluid" src="{% static 'images/blog_photo/2.png' %}" alt="">
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6 text-center img_solopage">
+            <img class="img-fluid" src="{% static 'images/blog_photo/3.png' %}" alt="">
+        </div>
+        <div class="col-10">
+            <em style="text-alight: center;">Contrary to popular belief, Lorem Ipsum is not simply random text.
+                It has roots in a piece of classical Latin literature from 45 BC,
+                making it over 2000 years old. Richard McClintock, a Latin professor
+                at Hampden-Sydney College in Virginia, looked up one of the more obscure
+                Latin words, consectetur, from a Lorem Ipsum passage, and going through the
+                cites of the word in classical literature, discovered the undoubtable source.</em>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <p style="padding: 20px;">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots
+                    in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+                    Richard McClintock, <b> a Latin professor at Hampden-Sydney College in Virginia</b>, looked
+                    up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage,
+                    and going through the cites of the word in classical literature, discovered the undoubtable source.
+                    Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum"
+                    (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise
+                    on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum,
+                    "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="container-fluid" style="background-color: #f0f0f0;">
+    <h2 class="text-center" style="color: #d4d1c9;">YOU MAY ALSO LIKE</h2>
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img class="bottom-img" src="{% static 'images/blog_photo/box-1.png' %}" alt="">
+            <p>Cold winter days</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="bottom-img" src="{% static 'images/blog_photo/box-2.png' %}" alt="">
+            <p>A day exploring the Alps</p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="bottom-img" src="{% static 'images/blog_photo/box-3.png' %}" alt="">
+            <p>American dream</p>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+{% endblock %}

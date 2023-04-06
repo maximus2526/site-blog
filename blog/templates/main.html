@@ -1,0 +1,81 @@
+<html>
+{% extends "base.html" %} {% load static %}
+{% block content %}
+<link href="{% static 'css/base.css' %}" rel="stylesheet" type="text/css">
+<div class="container">
+	<div class="row">
+		<h3>Blog</h3>
+	</div>
+	<div class="row">
+        {% for post in posts %}
+		<!-- Перевірка на те, чи є поточний номер ітерації парним числом (ділення на 2 без залишку) -->
+        {% if forloop.counter0|divisibleby:2 %} </div>
+	<div class="row">
+        {% endif %}
+		<div class="col-md-6">
+			<!-- Блок шириною 50% на екранах середньої ширини (medium screens) і більше --><img src="{% static '' %}{{ post.image.url|cut:'/blog/static/' }}" alt="{{ post.title }}" width="100%">
+			<h3> <a class="post_title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+
+
+			<p>{{ post.short_text }}</p>
+		</div> {% endfor %} </div>
+    <div class="row">
+        <div class="col">
+            <div class="pagination text-center">
+                <div class="page-numbers">
+                    {% for i in posts.paginator.page_range %}
+                        {% if posts.number == i %}
+                            <button class="current-page">{{ i }}</button>
+                        {% else %}
+                            <a href="?page={{ i }}"><button>{{ i }}</button></a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+
+.post_title{
+  color: black;
+  text-decoration: none;
+  }
+
+.text-center {
+    text-align: center;
+    padding: 50px;
+}
+
+.page-numbers {
+
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+button {
+    margin-right: 5px;
+}
+
+.page-numbers button {
+  background-color: #b4ad9e;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border: none;
+  margin: 2px;
+}
+
+.page-numbers button:hover {
+  background-color: white;
+  color: #b4ad9e;
+  border: 2px solid #b4ad9e;
+}
+</style>
+{% endblock %}
+
+</html>

@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %}{% load static %}
 
 {% block content %}
 <div class="container">
@@ -6,11 +6,13 @@
         <div class="col-md-8">
             <h2>{{ post.title }}</h2>
             <p>{{ post.pub_date }}</p>
-            <img src="{{ post.image.url }}" alt="{{ post.title }}" width="100%">
+          <img src="{% static '' %}{{ post.image.url|cut:'/blog/static/' }}" alt="{{ post.title }}" width="100%">
             <p>{{ post.full_text }}</p>
         </div>
     </div>
 
+</div>
+    <div class="container">
 
     <div class="comment-form">
         <h3>Leave a comment</h3>
@@ -31,6 +33,5 @@
         {% empty %}
         <p>No comments yet.</p>
         {% endfor %}
-    </div>
-</div>
+    </div></div>
 {% endblock %}
